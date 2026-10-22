@@ -1,0 +1,73 @@
+# Blockly Games - Adaptación institucional IPET N° 249 Nicolás Copérnico
+
+Este repositorio contiene una versión offline de Blockly Games adaptada visual e institucionalmente para el IPET N° 249 Nicolás Copérnico.
+
+## Objetivo del proyecto
+
+Personalizar la versión local de Blockly Games para:
+- incorporar identidad institucional del colegio,
+- mantener la ejecución sin conexión a Internet,
+- conservar el funcionamiento original del proyecto,
+- agregar un estilo institucional basado en amarillo, rojo y negro,
+- adaptar textos y mensajes educacionales del entorno escolar.
+
+## Instalación y ejecución offline
+
+1. Clonar o descargar este repositorio en una carpeta local.
+2. Abrir el archivo `index.html` del proyecto en el navegador.
+3. También podés acceder directamente a la versión de juegos en `es/index.html`.
+4. No requiere conexión a Internet para funcionar, siempre que se abran desde el sistema de archivos local y no se carguen recursos externos.
+
+Importante:
+- Todas las rutas de assets y scripts están pensadas para ser relativas.
+- La ejecución local no depende de CDN ni servicios remotos.
+- Si tenés el escudo como `ipet249.jpg`, guardalo en `es/index/ipet249.jpg`. El sistema usa `ipet249.jpg` y, si no existe, hace fallback a `ipet249.svg`.
+
+## Archivos principales modificados
+
+- `es/index.html` — pantalla principal
+- `es/index/style.css` — estilo del menú principal
+- `es/common/common.css` — estilos compartidos de la interfaz
+- `es/maze.html` — juego Laberinto
+- `es/maze/style.css` — estilos del Laberinto
+- `es/bird.html` — juego Pájaro
+- `es/bird/style.css` — estilos del Pájaro
+- `es/common/boot.js` — carga del idioma y del script institucional
+- `es/common/ipet-custom.js` — personalización institucional y lógica adicional
+- `es/index/ipet249.jpg` — escudo institucional del IPET 249 (si lo tenés en JPG)
+- `es/index/ipet249.svg` — respaldo visual alternativo
+
+## Personalizaciones aplicadas
+
+### Identidad institucional
+- incorporación del escudo institucional del IPET 249 con colores amarillo y rojo,
+- uso de una paleta visual coherente con la institución,
+- marca visible en la cabecera y pie de página,
+- textos institucionales adaptados al contexto escolar.
+
+### Mensajes y textos
+- se añadieron mensajes institucionales en español para la experiencia del alumno,
+- se configuró una capa de mensajes personalizados para reforzar el tono educativo del colegio.
+
+### Lógica de juego modificada
+En el juego del Laberinto se añadió un contador de intentos y temporizador para cada ejecución. La lógica funciona de la siguiente manera:
+- Cada vez que el alumno presiona Ejecutar, el contador aumenta.
+- Se inicia un cronómetro desde el primer intento.
+- El tiempo se muestra en la interfaz en formato `mm:ss`.
+- Al completar el nivel, se incorpora un mensaje de cierre con la cantidad de intentos y tiempo en el mismo estilo institucional.
+
+Esto ayuda a incentivar la reflexión, la práctica y la competencia sana en el aula.
+
+## Créditos
+
+Este proyecto es una adaptación local de Blockly Games, desarrollado originalmente por Google.
+
+Se agradece al proyecto original por la base del entorno visual, el editor de bloques y la estructura de juegos educativos.
+
+## Créditos institucionales
+
+Adaptación institucional realizada por [Nombre del Estudiante] para el IPET N° 249 Nicolás Copérnico.
+
+## Nota final
+
+La versión se mantiene ejecutable sin conexión y sin errores de carga de recursos, priorizando accesibilidad local y continuidad del proyecto original.
