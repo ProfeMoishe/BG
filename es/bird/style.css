@@ -44,11 +44,10 @@ html[dir="RTL"] #pegSpin {
 
 .helpMenuFake {
   border-radius: 4px;
-  background-color: #ffeb00;
+  background-color: #bfcdde;
   color: #000;
   padding: 0 1ex;
   cursor: default;
-  border: 1px solid #000;
 }
 img[src$="help_up.png"] {
   margin: -20px 10px 0;
@@ -65,6 +64,7 @@ img[src$="help_down.png"] {
   overflow: hidden;
 }
 
+/* 'Look' icon */
 #look>path {
   display: none;
   fill: none;
@@ -73,13 +73,16 @@ img[src$="help_down.png"] {
   stroke-opacity: 0.7;
 }
 
+/* Buttons */
 button.primary {
+  /* Can't use "text-align: start" due to IE. */
   text-align: left;
 }
 html[dir="RTL"] button.primary {
   text-align: right;
 }
 
+/* Sprited icons. */
 .icon21 {
   height: 21px;
   width: 21px;
@@ -133,7 +136,7 @@ html[dir="RTL"] #pegmanButton>span {
   background-color: #fff;
 }
 #pegmanMenu>div:hover {
-  background-color: #ffeb00;
+  background-color: #57e;
 }
 #pegmanMenu>div>img {
   height: 38px;

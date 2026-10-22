@@ -13,11 +13,5 @@
   var script = document.createElement('script');
   script.src = appName + '/generated/' + lang + '/compressed.js';
   script.type = 'text/javascript';
-  script.onload = function() {
-    var custom = document.createElement('script');
-    custom.src = 'common/ipet-custom.js';
-    custom.type = 'text/javascript';
-    document.head.appendChild(custom);
-  };
   document.head.appendChild(script);
 })();

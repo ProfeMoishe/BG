@@ -1,153 +1,167 @@
 body {
-  background: linear-gradient(180deg, #fffef0 0%, #fff9c4 100%);
-  color: #1a1a1a;
+  background-color: #fff;
   font-family: sans-serif;
   margin-top: 0;
 }
-
 h1 {
   font-weight: normal;
   font-size: 130%;
 }
-
 h1 a {
   text-decoration: none;
 }
-
-#ipetBrand {
-  position: fixed;
-  top: 14px;
-  left: 14px;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255, 235, 0, 0.96);
-  border: 3px solid #000000;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  padding: 8px 12px;
+a:hover {
+  color: #f00;
+}
+.farSide {
+  text-align: right;
+}
+html[dir="RTL"] .farSide {
+  text-align: left;
+}
+.level_number {
+  border: solid 1px #ddd;
+  border-radius: 20px;
+  padding: 6px 12px;
+  color: #888;
+}
+.level_dot {
+  border: solid 1px #ddd;
+ 	border-radius: 50%;
+ 	width: 15px;
+ 	height: 15px;
+  display: inline-block;
+}
+.level_done, .level_dot:hover, .level_number:hover {
+  background-color: #ddd;
+  color: #000;
+}
+#containerCode {
+  direction: ltr;
+  background-color: #eee;
+  padding: 5px;
+  margin: 0 3ex;
+  font-size: large;
+  overflow: auto;
+  max-height: 200px;
 }
 
-#ipetBrand img {
-  width: 54px;
-  height: 54px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.25);
+img[src$="help.png"] {
+  height: 64px;
+  width: 64px;
 }
 
-.ipet-brand-copy {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-  color: #000000;
-  font-weight: 700;
-}
-
-.ipet-brand-copy strong {
-  font-size: 1.05rem;
-}
-
-.ipet-brand-copy span {
-  font-size: 0.78rem;
-  font-weight: 600;
-}
-
-#ipetFooter {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 1500;
-  text-align: center;
-  padding: 10px 16px;
-  background: rgba(0, 0, 0, 0.74);
-  color: #ffffff;
-  font-size: 0.82rem;
-  line-height: 1.4;
-  box-sizing: border-box;
-}
-
-#ipetStats {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 1200;
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
-  background: rgba(255, 235, 0, 0.92);
-  color: #111111;
-  border: 2px solid #000000;
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-#ipetStats strong {
-  color: #e52521;
-}
-
-button.primary {
-  border: 1px solid #e52521;
-  background-color: #e52521;
-  color: #fff;
-}
-
-button.secondary {
-  border: 1px solid #ffeb00;
-  background-color: #ffeb00;
-  color: #111;
-}
-
-button:hover:not(:disabled) {
-  box-shadow: 0 4px 10px rgba(229, 37, 33, 0.35);
-}
-
-#dialogHeader {
-  background-color: #ffeb00;
+html[dir="RTL"] .mirrorImg {
+  transform: scaleX(-1);
 }
 
 #languageMenu {
-  background: #fff;
-  border: 2px solid #000;
+  vertical-align: top;
+  margin-top: 16px;
+}
+
+/* Buttons */
+button {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: large;
+  background-color: #eee;
+  color: #000;
+}
+button.primary {
+  border: 1px solid #dd4b39;
+  background-color: #dd4b39;
+  color: #fff;
+}
+button.secondary {
+  border: 1px solid #4d90fe;
+  background-color: #4d90fe;
+  color: #fff;
+}
+button.primary>img,
+button.secondary>img {
+  opacity: 1;
+}
+button>img {
+  opacity: 0.6;
+  vertical-align: text-bottom;
+}
+button:hover:not(:disabled)>img {
+  opacity: 1;
+}
+button:active:not(:disabled) {
+  border: 1px solid #888 !important;
+}
+button:hover:not(:disabled) {
+  box-shadow: 2px 2px 5px #888;
+}
+
+/* Dialogs */
+#dialog {
+  visibility: hidden;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  position: absolute;
   border-radius: 8px;
-  padding: 4px 8px;
+  box-shadow: 5px 5px 5px #888;
+  padding: 10px;
 }
-
-a:hover {
-  color: #d32f2f;
+#dialogBorder {
+  visibility: hidden;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #888;
 }
-
-#containerCode {
-  background-color: #fff9c4;
-  border: 1px solid #e5d55e;
+#dialogShadow {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.3
 }
-
-#galleryForm > header {
-  color: #111;
+.dialogAnimate {
+  transition-property: width height left top opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
 }
-
-@media (max-width: 768px) {
-  #ipetBrand {
-    top: 8px;
-    left: 8px;
-    padding: 6px 10px;
-  }
-
-  #ipetBrand img {
-    width: 42px;
-    height: 42px;
-  }
-
-  #ipetStats {
-    top: 76px;
-    right: 12px;
-    font-size: 0.8rem;
-  }
-
-  #ipetFooter {
-    font-size: 0.72rem;
-  }
+.dialogHiddenContent {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#dialogHeader {
+  height: 25px;
+  margin: -10px -10px 15px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #ddd;
+  cursor: move;
+}
+#dialog button {
+  min-width: 4em;
+}
+.readonly .blocklyMainBackground {
+  stroke: none;
+}
+#galleryForm>header {
+  font-size: larger;
+}
+#galleryForm>footer {
+  font-size: smaller;
+}
+#galleryForm>* {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
