@@ -1,145 +1,192 @@
-#blockly {
-  position: fixed;
-  bottom: 10px;
-}
-#visualization {
-  position: relative;
-}
-#capacityBubble {
-  position: absolute;
-  margin-top: -0.5em;
-  left: 10px;
-  top: 375px;
-  width: 380px;
-}
-html[dir="RTL"] #capacityBubble {
-  left: auto;
-  right: 10px;
-}
-#capacity {
-  display: none;
-  color: #fff;
-  padding: 5px 1em;
-  border-radius: 15px;
-  background-color: rgba(64,64,64,0.7);
-  font-size: large;
-}
-.capacityNumber {
-  font-weight: bold;
-}
-#sampleOneTopBlock {
-  height: 80px;
-  width: 250px;
-}
-#pegSpin {
-  height: 50px;
-  width: 49px;
-  background-position: -343px 0px;
-  margin-top: 10px;
-  position: absolute;
-}
-html[dir="RTL"] #pegSpin {
-  background-position: -441px 0px;
-}
-
-.helpMenuFake {
-  border-radius: 4px;
-  background-color: #bfcdde;
-  color: #000;
-  padding: 0 1ex;
-  cursor: default;
-}
-img[src$="help_up.png"] {
-  margin: -20px 10px 0;
-  height: 64px;
-  width: 23px;
-}
-img[src$="help_down.png"] {
-  margin: 0 10px -20px;
-  height: 64px;
-  width: 23px;
-}
-
-#svgMaze {
-  overflow: hidden;
-}
-
-/* 'Look' icon */
-#look>path {
-  display: none;
-  fill: none;
-  stroke-width: 10;
-  stroke-linecap: round;
-  stroke-opacity: 0.7;
-}
-
-/* Buttons */
-button.primary {
-  /* Can't use "text-align: start" due to IE. */
-  text-align: left;
-}
-html[dir="RTL"] button.primary {
-  text-align: right;
-}
-
-/* Sprited icons. */
-.icon21 {
-  height: 21px;
-  width: 21px;
-  background-image: url(icons.png);
-}
-.link {
-  background-position: 0px 0px;
-}
-.run {
-  background-position: 0px -21px;
-}
-.stop {
-  background-position: -21px -21px;
-}
-
-#pegmanButton {
+html, body {
+  height: 100%;
+  width: 100%;
   padding: 0;
-  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fffef0 0%, #fff7ad 48%, #ffe600 100%);
 }
-#pegmanButton:active {
-  border: 1px solid #ddd !important;
-}
-#pegmanButton>img {
-  margin-left: -0.5ex;
-  margin-right: 0.5ex;
-  height: 38px;
-  width: 49px;
-  background-position: -980px 0px;
-  opacity: 0.8;
-}
-html[dir="RTL"] #pegmanButton>img {
-  margin-left: 0.5ex;
-  margin-right: -0.5ex;
-}
-#pegmanButton>span {
+
+#languageMenu {
   position: absolute;
-  top: 0.8ex;
-  margin-left: -15px;
+  top: 0;
 }
-html[dir="RTL"] #pegmanButton>span {
-  margin-right: -15px;
+
+html[dir="LTR"] #languageMenu {
+  right: 1em;
 }
-#pegmanMenu {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px #888;
-  display: none;
+
+html[dir="RTL"] #languageMenu {
+  left: 1em;
+}
+
+#header {
   position: absolute;
+  top: 1em;
+  left: 20%;
+  right: 20%;
+  width: 60%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
-#pegmanMenu>div {
-  background-color: #fff;
+
+#banner {
+  padding: 1em;
 }
-#pegmanMenu>div:hover {
-  background-color: #57e;
+
+#subtitle {
+  font-style: italic;
+  color: #1a1a1a;
 }
-#pegmanMenu>div>img {
-  height: 38px;
-  width: 49px;
-  background-position: -980px 0px;
+
+a {
+  text-decoration: none;
+}
+
+#clearDataPara {
+  position: absolute;
+  bottom: 0;
+  margin: 1em;
+}
+
+#clearData {
+  padding: 0 4px;
+  margin: 5px 10px;
+  font-size: medium;
+}
+
+#path {
+  stroke: #d32f2f;
+  stroke-width: 1;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation: dash .7s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.iconBack {
+  fill: #fff;
+}
+
+.iconBorder {
+  stroke: #000000;
+  stroke-width: 5;
+  fill: rgba(229, 37, 33, 0.15);
+}
+
+a:hover > .iconBorder {
+  fill: rgba(255, 235, 0, 0.35);
+}
+
+a:hover > text {
+  fill: #d32f2f;
+}
+
+.icon {
+  animation: pop .5s cubic-bezier(.5,.5,.5,1.5) forwards;
+  visibility: hidden;
+}
+
+.icon text {
+  text-anchor: middle;
+  font-size: 18pt;
+  fill: #000;
+}
+
+#icon-puzzle {
+  animation-delay: 0.0s;
+}
+
+#icon-maze {
+  animation-delay: 0.1s;
+}
+
+#icon-bird {
+  animation-delay: 0.2s;
+}
+
+#icon-turtle {
+  animation-delay: 0.3s;
+}
+
+#icon-movie {
+  animation-delay: 0.4s;
+}
+
+#icon-music {
+  animation-delay: 0.5s;
+}
+
+#icon-pond-tutor {
+  animation-delay: 0.6s;
+}
+
+#icon-pond-duck {
+  animation-delay: 0.7s;
+}
+
+#back-puzzle {
+  animation-delay: 0.3s;
+}
+
+#back-maze {
+  animation-delay: 0.4s;
+}
+
+#back-bird {
+  animation-delay: 0.5s;
+}
+
+#back-turtle {
+  animation-delay: 0.6s;
+}
+
+#back-movie {
+  animation-delay: 0.7s;
+}
+
+#back-music {
+  animation-delay: 0.8s;
+}
+
+#back-pond-tutor {
+  animation-delay: 0.9s;
+}
+
+#back-pond-duck {
+  animation-delay: 1.0s;
+}
+
+@keyframes pop {
+  from {
+    transform: translate(150px, 50px) scale(0);
+    visibility: visible;
+  }
+  to {
+    transform: translate(0, 0) scale(1);
+    visibility: visible;
+  }
+}
+
+.gaugeBack {
+  stroke: #aaa;
+  stroke-width: 6;
+  fill: none;
+  animation: pop 0.1s linear forwards;
+  visibility: hidden;
+}
+
+.gaugeFront {
+  stroke: #e52521;
+  stroke-width: 8;
+  fill: none;
 }

@@ -1,186 +1,153 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
+body {
+  background: linear-gradient(180deg, #fffef0 0%, #fff9c4 100%);
+  color: #1a1a1a;
+  font-family: sans-serif;
+  margin-top: 0;
 }
 
-#languageMenu {
-  position: absolute;
-  top: 0;
+h1 {
+  font-weight: normal;
+  font-size: 130%;
 }
 
-html[dir="LTR"] #languageMenu {
-  right: 1em;
-}
-
-html[dir="RTL"] #languageMenu {
-  left: 1em;
-}
-
-#header {
-  position: absolute;
-  top: 1em;
-  left: 20%;
-  right: 20%;
-  width: 60%;
-  text-align: center;
-}
-
-#banner {
-  padding: 1em;
-}
-
-#subtitle {
-  font-style: italic;
-}
-
-a {
+h1 a {
   text-decoration: none;
 }
 
-#clearDataPara {
-  position: absolute;
+#ipetBrand {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 235, 0, 0.96);
+  border: 3px solid #000000;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  padding: 8px 12px;
+}
+
+#ipetBrand img {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ipet-brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  color: #000000;
+  font-weight: 700;
+}
+
+.ipet-brand-copy strong {
+  font-size: 1.05rem;
+}
+
+.ipet-brand-copy span {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+#ipetFooter {
+  position: fixed;
+  left: 0;
   bottom: 0;
-  margin: 1em;
+  width: 100%;
+  z-index: 1500;
+  text-align: center;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.74);
+  color: #ffffff;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  box-sizing: border-box;
 }
 
-#clearData {
-  padding: 0 4px;
-  margin: 5px 10px;
-  font-size: medium;
+#ipetStats {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 1200;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  background: rgba(255, 235, 0, 0.92);
+  color: #111111;
+  border: 2px solid #000000;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-#path {
-  stroke: #ccc;
-  stroke-width: 1;
-  stroke-linecap: round;
-  fill: none;
-  stroke-dasharray: 180;
-  stroke-dashoffset: 180;
-  animation: dash .7s linear forwards;
+#ipetStats strong {
+  color: #e52521;
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
+button.primary {
+  border: 1px solid #e52521;
+  background-color: #e52521;
+  color: #fff;
+}
+
+button.secondary {
+  border: 1px solid #ffeb00;
+  background-color: #ffeb00;
+  color: #111;
+}
+
+button:hover:not(:disabled) {
+  box-shadow: 0 4px 10px rgba(229, 37, 33, 0.35);
+}
+
+#dialogHeader {
+  background-color: #ffeb00;
+}
+
+#languageMenu {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+a:hover {
+  color: #d32f2f;
+}
+
+#containerCode {
+  background-color: #fff9c4;
+  border: 1px solid #e5d55e;
+}
+
+#galleryForm > header {
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  #ipetBrand {
+    top: 8px;
+    left: 8px;
+    padding: 6px 10px;
   }
-}
 
-.iconBack {
-  fill: #fff;
-}
-
-.iconBorder {
-  stroke: #aaa;
-  stroke-width: 5;
-  fill: rgba(0, 0, 0, 0.1);
-}
-
-a:hover > .iconBorder {
-  fill: rgba(255, 255, 255, 0.1);
-}
-
-a:hover > text {
-  fill: #666;
-}
-
-.icon {
-  animation: pop .5s cubic-bezier(.5,.5,.5,1.5) forwards;
-  visibility: hidden;
-}
-
-.icon text {
-  text-anchor: middle;
-  font-size: 18pt;
-}
-
-#icon-puzzle {
-  animation-delay: 0.0s;
-}
-
-#icon-maze {
-  animation-delay: 0.1s;
-}
-
-#icon-bird {
-  animation-delay: 0.2s;
-}
-
-#icon-turtle {
-  animation-delay: 0.3s;
-}
-
-#icon-movie {
-  animation-delay: 0.4s;
-}
-
-#icon-music {
-  animation-delay: 0.5s;
-}
-
-#icon-pond-tutor {
-  animation-delay: 0.6s;
-}
-
-#icon-pond-duck {
-  animation-delay: 0.7s;
-}
-
-#back-puzzle {
-  animation-delay: 0.3s;
-}
-
-#back-maze {
-  animation-delay: 0.4s;
-}
-
-#back-bird {
-  animation-delay: 0.5s;
-}
-
-#back-turtle {
-  animation-delay: 0.6s;
-}
-
-#back-movie {
-  animation-delay: 0.7s;
-}
-
-#back-music {
-  animation-delay: 0.8s;
-}
-
-#back-pond-tutor {
-  animation-delay: 0.9s;
-}
-
-#back-pond-duck {
-  animation-delay: 1.0s;
-}
-
-@keyframes pop {
-  from {
-    transform: translate(150px, 50px) scale(0);
-    visibility: visible;
+  #ipetBrand img {
+    width: 42px;
+    height: 42px;
   }
-  to {
-    transform: translate(0, 0) scale(1);
-    visibility: visible;
+
+  #ipetStats {
+    top: 76px;
+    right: 12px;
+    font-size: 0.8rem;
   }
-}
 
-.gaugeBack {
-  stroke: #aaa;
-  stroke-width: 6;
-  fill: none;
-  animation: pop 0.1s linear forwards;
-  visibility: hidden;
-}
-
-.gaugeFront {
-  stroke: #0b0;
-  stroke-width: 8;
-  fill: none;
+  #ipetFooter {
+    font-size: 0.72rem;
+  }
 }

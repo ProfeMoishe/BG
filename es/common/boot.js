@@ -1,8 +1,6 @@
-
-// Single-language bootloader.
 (function() {
   // Application path.
-  var appName = location.pathname.match(/\/([-\w]+)(\.html)?$/);
+  var appName = location.pathname.match(/\/([\-\w]+)(\.html)?$/);
   appName = appName ? appName[1].replace('-', '/') : 'index';
 
   // Only one language.
@@ -14,5 +12,11 @@
   var script = document.createElement('script');
   script.src = appName + '/generated/' + lang + '/compressed.js';
   script.type = 'text/javascript';
+  script.onload = function() {
+    var customScript = document.createElement('script');
+    customScript.src = 'common/ipet-custom.js';
+    customScript.type = 'text/javascript';
+    document.head.appendChild(customScript);
+  };
   document.head.appendChild(script);
 })();
